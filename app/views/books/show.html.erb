@@ -1,10 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @book %>
+<div class="show-item">
+  <%= render @book %>
+</div>
 
-<div>
+<nav class="page-nav">
   <%= link_to "Edit this book", edit_book_path(@book) %> |
   <%= link_to "Back to books", books_path %>
 
   <%= button_to "Destroy this book", @book, method: :delete %>
-</div>
+</nav>
