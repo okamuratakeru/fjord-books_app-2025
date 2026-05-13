@@ -1,11 +1,11 @@
-<% content_for :title, "New book" %>
+<% content_for :title, t('common.new') %>
 
-<h1>New book</h1>
+<h1><%= t('common.new') %></h1>
 
 <%= render "form", book: @book %>
 
 <br>
 
 <nav class="page-nav">
-  <%= link_to "Back to books", books_path %>
+  <%= link_to t('common.back'), books_path %>
 </nav>
