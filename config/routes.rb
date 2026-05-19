@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
-  resources :accounts, only: [:index, :show, :edit, :update]
+  resources :accounts, only: [:index, :show]
 
   devise_for :users, controllers: {
     passwords: 'users/passwords'

@@ -1,2 +1,17 @@
-<h1>Accounts#show</h1>
-<p>Find me in app/views/accounts/show.html.erb</p>
+<h1>ユーザー詳細</h1>
+
+<dl>
+  <dt>メール</dt>
+  <dd><%= @user.email %></dd>
+
+  <dt>郵便番号</dt>
+  <dd><%= @user.postal_code %></dd>
+
+  <dt>住所</dt>
+  <dd><%= @user.address %></dd>
+
+  <dt>自己紹介</dt>
+  <dd><%= @user.bio %></dd>
+</dl>
+
+<%= link_to "一覧に戻る", accounts_path %>
