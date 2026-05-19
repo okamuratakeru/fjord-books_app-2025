@@ -15,3 +15,6 @@
 </dl>
 
 <%= link_to "一覧に戻る", accounts_path %>
+<% if current_user == @user %>
+  <%= link_to "編集", edit_user_registration_path %>
+<% end %>

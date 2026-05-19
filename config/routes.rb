@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :accounts, only: [:index, :show]
 
   devise_for :users, controllers: {
-    passwords: 'users/passwords'
+    passwords: 'users/passwords',
+    registrations: 'users/registrations'
   }
   resources :books
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
