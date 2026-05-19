@@ -55,3 +55,4 @@
 <div><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？", turbo_confirm: "本当に削除しますか？" }, method: :delete %></div>
 
 <%= link_to "戻る", :back %>
+<%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
