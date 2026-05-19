@@ -1,4 +1,9 @@
 ja:
+  layouts:
+    application:
+      accounts: ユーザー一覧
+      edit: アカウント編集
+      sign_out: ログアウト
   accounts:
     index:
       title: ユーザー一覧

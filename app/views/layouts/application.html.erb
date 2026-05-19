@@ -23,6 +23,13 @@
   </head>
 
   <body class="<%= params[:action] %>">
+    <header>
+      <% if user_signed_in? %>
+        <%= link_to t('layouts.application.accounts'), accounts_path %>
+        <%= link_to t('layouts.application.edit'), edit_user_registration_path %>
+        <%= link_to t('layouts.application.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>
