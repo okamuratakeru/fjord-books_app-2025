@@ -1,20 +1,20 @@
-<h1>ユーザー詳細</h1>
+<h1><%= t('accounts.show.title') %></h1>
 
 <dl>
-  <dt>メール</dt>
+  <dt><%= t('accounts.show.email') %></dt>
   <dd><%= @user.email %></dd>
 
-  <dt>郵便番号</dt>
+  <dt><%= t('accounts.show.postal_code') %></dt>
   <dd><%= @user.postal_code %></dd>
 
-  <dt>住所</dt>
+  <dt><%= t('accounts.show.address') %></dt>
   <dd><%= @user.address %></dd>
 
-  <dt>自己紹介</dt>
+  <dt><%= t('accounts.show.bio') %></dt>
   <dd><%= @user.bio %></dd>
 </dl>
 
-<%= link_to "一覧に戻る", accounts_path %>
+<%= link_to t('accounts.show.back'), accounts_path %>
 <% if current_user == @user %>
-  <%= link_to "編集", edit_user_registration_path %>
+  <%= link_to t('accounts.show.edit'), edit_user_registration_path %>
 <% end %>

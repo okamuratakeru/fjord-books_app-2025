@@ -21,6 +21,21 @@
     <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
   </div>
 
+  <div class="field">
+    <p><%= f.label :postal_code, "郵便番号" %></p>
+    <p><%= f.text_field :postal_code %></p>
+  </div>
+
+  <div class="field">
+    <p><%= f.label :address, "住所" %></p>
+    <p><%= f.text_field :address %></p>
+  </div>
+
+  <div class="field">
+    <p><%= f.label :bio, "自己紹介" %></p>
+    <p><%= f.text_area :bio %></p>
+  </div>
+
   <div class="actions">
     <%= f.submit t('devise.registrations.new.submit') %>
   </div>

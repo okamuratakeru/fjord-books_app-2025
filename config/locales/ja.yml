@@ -1,0 +1,12 @@
+ja:
+  accounts:
+    index:
+      title: ユーザー一覧
+    show:
+      title: ユーザー詳細
+      email: メール
+      postal_code: 郵便番号
+      address: 住所
+      bio: 自己紹介
+      back: 一覧に戻る
+      edit: 編集
