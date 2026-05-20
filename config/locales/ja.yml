@@ -200,8 +200,6 @@ ja:
     delete: "%{model}を削除する"
     edit_page: "%{model}を編集"
     error: "エラー"
-    create: "作成する"
-    update: "更新する"
     created: "%{model}を作成しました。"
     updated: "%{model}を更新しました。"
     destroyed: "%{model}を削除しました。"

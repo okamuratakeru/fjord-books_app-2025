@@ -237,8 +237,6 @@ en:
     delete: "Delete %{model}"
     edit_page: "Editing %{model}"
     error: Error
-    create: Create
-    update: Update
     created: "%{model} was successfully created."
     updated: "%{model} was successfully updated."
     destroyed: "%{model} was successfully destroyed."
