@@ -1,6 +1,8 @@
 ---
 en:
   activerecord:
+    models:
+      book: Book
     attributes:
       book:
         title: Title
@@ -228,21 +230,21 @@ en:
       short: "%d %b %H:%M"
     pm: pm
   common:
-    show: Show
-    new: New
+    show: "Show %{model}"
+    new: "New %{model}"
     back: Back
-    edit: Edit
-    delete: Delete
-    edit_page: Edit
+    edit: "Edit %{model}"
+    delete: "Delete %{model}"
+    edit_page: "Editing %{model}"
     error: Error
     create: Create
     update: Update
+    created: "%{model} was successfully created."
+    updated: "%{model} was successfully updated."
+    destroyed: "%{model} was successfully destroyed."
   books:
     app_title: Books App
     index:
       title: Book List
     form:
       error_message: prohibited this book from being saved
-    created: Book was successfully created.
-    updated: Book was successfully updated.
-    destroyed: Book was successfully destroyed.

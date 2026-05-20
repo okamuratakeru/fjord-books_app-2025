@@ -1,6 +1,8 @@
 ---
 ja:
   activerecord:
+    models:
+      book: 本
     attributes:
       book:
         title: タイトル
@@ -191,21 +193,21 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   common:
-    show: 詳細を見る
-    new: 新規作成
-    back: 一覧に戻る
-    edit: 編集する
-    delete: 削除する
-    edit_page: 編集
-    error: エラー
-    create: 作成する
-    update: 更新する
+    show: "%{model}の詳細を見る"
+    new: "%{model}を新規作成"
+    back: "%{model}の一覧に戻る"
+    edit: "%{model}を編集する"
+    delete: "%{model}を削除する"
+    edit_page: "%{model}を編集"
+    error: "エラー"
+    create: "作成する"
+    update: "更新する"
+    created: "%{model}を作成しました。"
+    updated: "%{model}を更新しました。"
+    destroyed: "%{model}を削除しました。"
   books:
     app_title: 本アプリ
     index:
       title: 本一覧
     form:
       error_message: この本は保存できませんでした
-    created: 本を作成しました。
-    updated: 本を更新しました。
-    destroyed: 本を削除しました。
