@@ -13,8 +13,8 @@ class User < ApplicationRecord
   def avatar_content_type
     return unless avatar.attached?
 
-    unless avatar.blob.content_type.in?(%w[image/png image/jpeg image/gif])
-      errors.add(:avatar, :invalid)
-    end
+    return if avatar.blob.content_type.in?(%w[image/png image/jpeg image/gif])
+
+    errors.add(:avatar, :invalid)
   end
 end
