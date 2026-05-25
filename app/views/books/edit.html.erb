@@ -8,5 +8,5 @@
 
 <nav class="page-nav">
   <%= link_to t('common.show.link', model: Book.model_name.human), @book %> |
-  <%= link_to t('common.back.link'), books_path %>
+  <%= link_to t('common.back.link', model: Book.model_name.human), books_path %>
 </nav>

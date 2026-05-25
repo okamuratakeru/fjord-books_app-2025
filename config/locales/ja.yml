@@ -198,15 +198,14 @@ ja:
     new:
       link: "%{model}を新規作成"
     back:
-      link: "%{model}の一覧に戻る"
+      link: "%{model}一覧に戻る"
     edit:
       link: "%{model}を編集する"
       title: "%{model}を編集"
     destroy:
       link: "%{model}を削除する"
       success: "%{model}を削除しました。"
-    error:
-      title: "エラー"
+
     create:
       success: "%{model}を作成しました。"
     update:
@@ -216,4 +215,6 @@ ja:
     index:
       title: 本一覧
     form:
-      error_message: この本は保存できませんでした
+      error_message:
+        one: "エラーがあり保存できませんでした:"
+        other: "%{count}件のエラーがあり保存できませんでした:"

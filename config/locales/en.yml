@@ -231,19 +231,17 @@ en:
     pm: pm
   common:
     show:
-      link: "Show %{model}"
+      link: "Show this %{model}"
     new:
       link: "New %{model}"
     back:
-      link: Back
+      link: Back to books
     edit:
-      link: "Edit %{model}"
+      link: "Edit this %{model}"
       title: "Editing %{model}"
     destroy:
-      link: "Delete %{model}"
+      link: "Destroy this %{model}"
       success: "%{model} was successfully destroyed."
-    error:
-      title: Error
     create:
       success: "%{model} was successfully created."
     update:
@@ -251,6 +249,8 @@ en:
   books:
     app_title: Books App
     index:
-      title: Book List
+      title: Books
     form:
-      error_message: prohibited this book from being saved
+      error_message:
+        one: "1 error prohibited this book from being saved:"
+        other: "%{count} errors prohibited this book from being saved:"
