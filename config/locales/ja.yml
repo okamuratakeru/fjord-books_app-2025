@@ -193,16 +193,24 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   common:
-    show: "%{model}の詳細を見る"
-    new: "%{model}を新規作成"
-    back: "%{model}の一覧に戻る"
-    edit: "%{model}を編集する"
-    delete: "%{model}を削除する"
-    edit_page: "%{model}を編集"
-    error: "エラー"
-    created: "%{model}を作成しました。"
-    updated: "%{model}を更新しました。"
-    destroyed: "%{model}を削除しました。"
+    show:
+      link: "%{model}の詳細を見る"
+    new:
+      link: "%{model}を新規作成"
+    back:
+      link: "%{model}の一覧に戻る"
+    edit:
+      link: "%{model}を編集する"
+      title: "%{model}を編集"
+    destroy:
+      link: "%{model}を削除する"
+      success: "%{model}を削除しました。"
+    error:
+      title: "エラー"
+    create:
+      success: "%{model}を作成しました。"
+    update:
+      success: "%{model}を更新しました。"
   books:
     app_title: 本アプリ
     index:

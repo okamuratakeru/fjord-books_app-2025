@@ -1,12 +1,12 @@
-<% content_for :title, t('common.edit_page', model: Book.model_name.human) %>
+<% content_for :title, t('common.edit.title', model: Book.model_name.human) %>
 
-<h1><%= t('common.edit_page', model: Book.model_name.human) %></h1>
+<h1><%= t('common.edit.title', model: Book.model_name.human) %></h1>
 
 <%= render "form", book: @book %>
 
 <br>
 
 <nav class="page-nav">
-  <%= link_to t('common.show', model: Book.model_name.human), @book %> |
-  <%= link_to t('common.back'), books_path %>
+  <%= link_to t('common.show.link', model: Book.model_name.human), @book %> |
+  <%= link_to t('common.back.link'), books_path %>
 </nav>

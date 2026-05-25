@@ -230,16 +230,24 @@ en:
       short: "%d %b %H:%M"
     pm: pm
   common:
-    show: "Show %{model}"
-    new: "New %{model}"
-    back: Back
-    edit: "Edit %{model}"
-    delete: "Delete %{model}"
-    edit_page: "Editing %{model}"
-    error: Error
-    created: "%{model} was successfully created."
-    updated: "%{model} was successfully updated."
-    destroyed: "%{model} was successfully destroyed."
+    show:
+      link: "Show %{model}"
+    new:
+      link: "New %{model}"
+    back:
+      link: Back
+    edit:
+      link: "Edit %{model}"
+      title: "Editing %{model}"
+    destroy:
+      link: "Delete %{model}"
+      success: "%{model} was successfully destroyed."
+    error:
+      title: Error
+    create:
+      success: "%{model} was successfully created."
+    update:
+      success: "%{model} was successfully updated."
   books:
     app_title: Books App
     index:
