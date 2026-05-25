@@ -1,6 +1,6 @@
-<% content_for :title, t('common.new', model: model_human_name) %>
+<% content_for :title, t('common.new', model: Book.model_name.human) %>
 
-<h1><%= t('common.new', model: model_human_name) %></h1>
+<h1><%= t('common.new', model: Book.model_name.human) %></h1>
 
 <%= render "form", book: @book %>
 

@@ -15,9 +15,4 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
-  helper_method :model_human_name
-
-  def model_human_name
-    controller_name.classify.constantize.model_name.human
-  end
 end
