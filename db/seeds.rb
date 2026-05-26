@@ -10,8 +10,8 @@ def picture_file(name)
   File.open(Rails.root.join("db/seeds/#{name}"))
 end
 
-User.destroy_all
 Book.destroy_all
+User.destroy_all
 
 50.times do |i|
   User.create!(
