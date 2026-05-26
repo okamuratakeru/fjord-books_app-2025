@@ -1,11 +1,12 @@
-<% content_for :title, "New book" %>
+<% title = t('views.common.title_new', name: Book.model_name.human.downcase) %>
+<% content_for :title, title %>
 
-<h1>New book</h1>
+<h1><%= title %></h1>
 
 <%= render "form", book: @book %>
 
 <br>
 
-<div>
-  <%= link_to "Back to books", books_path %>
-</div>
+<nav class="page-nav">
+  <%= link_to t('views.common.back', name: i18n_pluralize(Book.model_name.human.downcase)), books_path %>
+</nav>
