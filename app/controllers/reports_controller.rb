@@ -51,6 +51,6 @@ class ReportsController < ApplicationController
   end
 
   def require_owner
-    redirect_to @report, status: :see_other unless @report.user == current_user
+    redirect_to @report, status: :see_other if @report.user != current_user
   end
 end
