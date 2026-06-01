@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  memo: MyText
+testbook:
+  title: プログラミングRuby 1.9 & 2.0
+  memo: 通称チキン本。Rubyの定番リファレンス。
 
-two:
-  title: MyString
-  memo: MyText
+testbook2:
+  title: オブジェクト指向設計実践ガイド
+  memo: Rubyで学ぶオブジェクト指向設計の入門書。
