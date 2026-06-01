@@ -8,3 +8,11 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ p.notice {
+  color: green;
+}
+
+p.alert {
+  color: red;
+}

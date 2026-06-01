@@ -9,3 +9,7 @@ en:
         memo: Memo
         picture: Picture
         title: Title
+      user:
+        postal_code: Postal Code
+        address: Address
+        bio: Bio

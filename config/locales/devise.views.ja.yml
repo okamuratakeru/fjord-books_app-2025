@@ -104,6 +104,7 @@ ja:
       new:
         sign_up: アカウント登録
         submit: 登録する
+      sign_up_failed: アカウント登録に失敗しました。
       signed_up: アカウント登録が完了しました。
       signed_up_but_inactive: "ログインするためには、アカウントを有効化してください。"
       signed_up_but_locked: "アカウントがロックされているためログインできません。"

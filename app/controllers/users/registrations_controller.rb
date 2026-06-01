@@ -5,7 +5,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super do |resource|
       if resource.persisted?
         sign_out resource
+        flash[:notice] = t('devise.registrations.signed_up')
         redirect_to new_user_session_path and return
+      else
+        flash.now[:alert] = t('devise.registrations.sign_up_failed')
       end
     end
   end
@@ -13,6 +16,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_update_path_for(resource)
-    account_path(resource)
+    user_path(resource)
   end
 end

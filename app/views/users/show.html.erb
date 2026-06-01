@@ -1,0 +1,20 @@
+<h1><%= t('users.show.title') %></h1>
+
+<dl>
+  <dt><%= User.human_attribute_name(:email) %></dt>
+  <dd><%= @user.email %></dd>
+
+  <dt><%= User.human_attribute_name(:postal_code) %></dt>
+  <dd><%= @user.postal_code %></dd>
+
+  <dt><%= User.human_attribute_name(:address) %></dt>
+  <dd><%= @user.address %></dd>
+
+  <dt><%= User.human_attribute_name(:bio) %></dt>
+  <dd><%= @user.bio %></dd>
+</dl>
+
+<%= link_to t('users.show.back'), users_path %>
+<% if current_user == @user %>
+  <%= link_to t('users.show.edit'), edit_user_registration_path %>
+<% end %>

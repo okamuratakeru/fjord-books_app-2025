@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AccountsController < ApplicationController
+class UsersController < ApplicationController
   def index
     @users = User.order(:id).page(params[:page]).per(20)
   end

@@ -1,9 +1,0 @@
-<h1><%= t('accounts.index.title') %></h1>
-
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.email, account_path(user) %></li>
-  <% end %>
-</ul>
-
-<%= paginate @users %>

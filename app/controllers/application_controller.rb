@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_sign_up_params, if: :devise_controller?
 
   def after_sign_in_path_for(_resource)
-    accounts_path
+    users_path
   end
 
   def after_sign_out_path_for(_resource_or_scope)
