@@ -15,7 +15,15 @@ class ReportsTest < ApplicationSystemTestCase
     Warden.test_reset!
   end
 
-  test '日報を作成できる' do
+  test 'メールアドレスとパスワードでログインして日報を作成できる' do
+    visit reports_path
+    click_on 'ログアウト'
+    Warden.test_reset!
+
+    fill_in 'Eメール', with: @user.email
+    fill_in 'パスワード', with: 'password'
+    click_on 'ログイン'
+
     visit new_report_path
     fill_in 'タイトル', with: '新しい日報'
     fill_in '内容',     with: '日報の内容'
