@@ -1,0 +1,5 @@
+<div id="<%= dom_id(commentable, 'comments') %>" class="comment-list">
+  <% commentable.comments.includes(:user).order(created_at: :asc).each do |comment| %>
+    <%= render 'comments/comment', comment: comment, commentable: commentable %>
+  <% end %>
+</div>

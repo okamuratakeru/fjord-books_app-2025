@@ -1,0 +1,50 @@
+/****************
+Comments
+****************/
+
+.comment-list {
+  max-width: var(--single-column-w);
+  margin-top: 1em;
+  display: grid;
+  gap: var(--global-block-gap);
+}
+
+.comment {
+  border: solid var(--global-bw) var(--global-bc);
+  border-radius: var(--global-br);
+  padding: 16px;
+  font-size: var(--global-fz-md);
+  line-height: var(--global-lh);
+}
+
+.comment-meta {
+  display: flex;
+  gap: 1em;
+  align-items: baseline;
+  margin-bottom: 0.5em;
+}
+
+.comment-author {
+  font-weight: bold;
+  font-size: var(--global-label-fz);
+}
+
+.comment-date {
+  font-size: var(--global-fz-sm);
+  color: #888;
+}
+
+.comment-body {
+  margin: 0;
+  padding: 0.5em 0 0;
+  border-top: solid var(--global-bw) var(--global-bc-muted);
+}
+
+.comment-actions {
+  margin-top: 0.5em;
+}
+
+.comment-form {
+  max-width: var(--single-column-w);
+  margin-top: 1em;
+}

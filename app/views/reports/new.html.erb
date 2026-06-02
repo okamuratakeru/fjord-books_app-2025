@@ -1,0 +1,12 @@
+<% title = t('views.common.title_new', name: Report.model_name.human.downcase) %>
+<% content_for :title, title %>
+
+<h1><%= title %></h1>
+
+<%= render "form", report: @report %>
+
+<br>
+
+<nav class="page-nav">
+  <%= link_to t('views.common.back', name: i18n_pluralize(Report.model_name.human.downcase)), reports_path %>
+</nav>

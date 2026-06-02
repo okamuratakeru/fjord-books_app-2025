@@ -3,6 +3,8 @@ ja:
     models:
       book: 本
       user: ユーザ
+      report: 日報
+      comment: コメント
 
     attributes:
       book:
@@ -16,3 +18,13 @@ ja:
         address: 住所
         self_introduction: 自己紹介文
         avatar: ユーザ画像
+      report:
+        title: タイトル
+        content: 内容
+        user: ユーザ
+        created_at: 作成日時
+
+  views:
+    comment:
+      content: コメント内容
+      deleted_user: 退会済みユーザー
