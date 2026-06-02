@@ -41,6 +41,6 @@ class CommentsController < ApplicationController
   end
 
   def require_owner
-    redirect_to @commentable, status: :see_other unless @comment.user == current_user
+    redirect_to @commentable, status: :see_other if @comment.user != current_user
   end
 end
