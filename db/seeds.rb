@@ -11,6 +11,17 @@ def picture_file(name)
 end
 
 Book.destroy_all
+User.destroy_all
+
+50.times do |i|
+  User.create!(
+    email: "user#{i + 1}@example.com",
+    password: 'password',
+    postal_code: '100-0001',
+    address: '東京都千代田区千代田1-1',
+    bio: "ユーザー#{i + 1}の自己紹介文です。"
+  )
+end
 
 Book.create!(
   title: 'Ruby超入門',

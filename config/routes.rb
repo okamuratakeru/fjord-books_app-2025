@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
+  devise_for :users, controllers: {
+    passwords: 'users/passwords',
+    registrations: 'users/registrations'
+  }
+  resources :users, only: [:index, :show]
   resources :books
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

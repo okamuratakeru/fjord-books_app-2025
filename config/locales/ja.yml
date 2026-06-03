@@ -195,6 +195,8 @@ ja:
       title_edit: "%{name}の編集"
       error: エラー
       validation_error: "%{errors}があるため、この%{name}は保存できませんでした"
+      title_show: "%{name}の詳細"
+      sign_out: ログアウト
     pagination:
       first: '« 最初'
       last: '最後 »'
@@ -206,3 +208,16 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+  layouts:
+    application:
+      books: 本一覧
+      users: ユーザー一覧
+      edit: アカウント編集
+      sign_out: ログアウト
+  users:
+    index:
+      title: ユーザー一覧
+    show:
+      title: ユーザー詳細
+      back: 一覧に戻る
+      edit: 編集
