@@ -3,6 +3,17 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
+  describe '#created_on' do
+    it '日時（datetime）から日付（date）に返す' do
+      report = Report.create!(
+        user: users(:alice),
+        title: 'テスト日報',
+        content: 'テスト内容',
+        created_at: Time.zone.local(2026, 6, 9, 14, 30, 0)
+      )
+      assert_equal Date.new(2026, 6, 9), report.created_on
+    end
+  end
   describe '#save_mentions' do
     let(:mentioned) { reports(:alice_report) }
     let(:new_mentioned) { reports(:bob_report) }
