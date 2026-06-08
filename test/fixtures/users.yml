@@ -7,12 +7,3 @@ alice:
 bob:
   email: bob@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-
-with_name:
-  name: テストユーザー
-  email: with_name@example.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-
-without_name:
-  email: without_name@example.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
