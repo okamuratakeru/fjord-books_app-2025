@@ -24,9 +24,9 @@ class ReportTest < ActiveSupport::TestCase
     end
 
     it '本文を更新すると古いメンションは残らない' do
-      report = Report.create!(user: users(:alice), title: 'テスト日報', content: 'placeholder')
-      report.update!(content: "http://localhost:3000/reports/#{report.id}")
-      assert_empty report.mentioning_reports
+      report = Report.create!(user: users(:alice), title: 'テスト日報', content: "http://localhost:3000/reports/#{mentioned.id}")
+      report.update!(content: 'リンクなし')
+      assert_not_includes report.mentioning_reports, mentioned
     end
 
     it '再保存時に古いメンション関係をリセットして新しい状態を保存する' do
