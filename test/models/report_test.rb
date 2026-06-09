@@ -44,6 +44,16 @@ class ReportTest < ActiveSupport::TestCase
     end
   end
 
+  describe 'destroy' do
+    it '日報を削除すると言及も削除される' do
+      mentioned = reports(:alice_report)
+      mentioning = Report.create!(user: users(:bob), title: 'テスト日報', content: "http://localhost:3000/reports/#{mentioned.id}")
+      assert_difference 'ReportMention.count', -1 do
+        mentioning.destroy!
+      end
+    end
+  end
+
   describe '#editable?' do
     let(:report) { reports(:alice_report) }
 
