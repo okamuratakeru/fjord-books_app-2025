@@ -3,8 +3,11 @@
 require 'test_helper'
 
 class ReportsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
-    @report = reports(:one)
+    @report = reports(:alice_report)
+    sign_in users(:alice)
   end
 
   test 'should get index' do

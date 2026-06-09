@@ -3,7 +3,66 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  describe '#created_on' do
+    it '日時（datetime）から日付（date）に返す' do
+      report = Report.create!(
+        user: users(:alice),
+        title: 'テスト日報',
+        content: 'テスト内容',
+        created_at: Time.zone.local(2026, 6, 9, 14, 30, 0)
+      )
+      assert_equal Date.new(2026, 6, 9), report.created_on
+    end
+  end
+  describe '#save_mentions' do
+    let(:mentioned) { reports(:alice_report) }
+    let(:new_mentioned) { reports(:bob_report) }
+
+    it '本文に他の日報へのリンクがあるとメンションに追加される' do
+      mentioning = Report.create!(user: users(:bob), title: 'テスト日報', content: "http://localhost:3000/reports/#{mentioned.id}")
+      assert_includes mentioning.mentioning_reports, mentioned
+    end
+
+    it '本文を更新すると古いメンションは残らない' do
+      report = Report.create!(user: users(:alice), title: 'テスト日報', content: "http://localhost:3000/reports/#{mentioned.id}")
+      report.update!(content: 'リンクなし')
+      assert_not_includes report.mentioning_reports, mentioned
+    end
+
+    it '再保存時に古いメンション関係をリセットして新しい状態を保存する' do
+      mentioning = Report.create!(user: users(:alice), title: 'テスト日報', content: "http://localhost:3000/reports/#{mentioned.id}")
+      mentioning.update!(content: "http://localhost:3000/reports/#{new_mentioned.id}")
+      mentioning.reload
+      assert_includes mentioning.mentioning_reports, new_mentioned
+      assert_not_includes mentioning.mentioning_reports, mentioned
+    end
+
+    it '同じリンクが複数あってもメンションは1つだけになる' do
+      url = "http://localhost:3000/reports/#{mentioned.id}"
+      mentioning = Report.create!(user: users(:bob), title: 'テスト日報', content: "#{url} #{url}")
+      assert_equal 1, mentioning.mentioning_reports.count
+    end
+  end
+
+  describe 'destroy' do
+    it '日報を削除すると言及も削除される' do
+      mentioned = reports(:alice_report)
+      mentioning = Report.create!(user: users(:bob), title: 'テスト日報', content: "http://localhost:3000/reports/#{mentioned.id}")
+      assert_difference 'ReportMention.count', -1 do
+        mentioning.destroy!
+      end
+    end
+  end
+
+  describe '#editable?' do
+    let(:report) { reports(:alice_report) }
+
+    it '日報作成者の場合trueを返す' do
+      assert report.editable?(report.user)
+    end
+
+    it '日報作成者ではない場合falseを返す' do
+      assert_not report.editable?(users(:bob))
+    end
+  end
 end
