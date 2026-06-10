@@ -6,11 +6,12 @@
 
 <%= render 'application/comments', commentable: @report %>
 
-<% if @mentioning_reports.any? %>
+<% mentioning_reports = @report.mentioning_reports.includes(:user) %>
+<% if mentioning_reports.any? %>
   <section>
     <h2>この日報を言及している日報</h2>
     <ul>
-      <% @mentioning_reports.each do |report| %>
+      <% mentioning_reports.each do |report| %>
         <li>
           <%= link_to report.title, report %>
           （<%= report.user.name %>）
