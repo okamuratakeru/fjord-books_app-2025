@@ -42,9 +42,9 @@ class Report < ApplicationRecord
 
     source_report_links.where(target_report_id: ids_to_remove).destroy_all
     ids_to_add.each do |target_id|
+      next unless Report.exists?(target_id)
+
       source_report_links.find_or_create_by!(target_report_id: target_id)
-    rescue ActiveRecord::RecordNotFound
-      nil
     end
   end
 end
