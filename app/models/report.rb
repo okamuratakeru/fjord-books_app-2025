@@ -14,6 +14,8 @@ class Report < ApplicationRecord
   has_many :mentioned_reports,  through: :source_report_links, source: :target_report
   has_many :mentioning_reports, through: :target_report_links, source: :source_report
 
+  scope :latest, -> { order(id: :desc) }
+
   validates :title, presence: true
   validates :content, presence: true
 

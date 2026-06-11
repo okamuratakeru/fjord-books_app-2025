@@ -6,7 +6,7 @@
 
 <%= render 'application/comments', commentable: @report %>
 
-<% mentioning_reports = @report.mentioning_reports.includes(:user) %>
+<% mentioning_reports = @report.mentioning_reports.latest.includes(:user) %>
 <% if mentioning_reports.any? %>
   <section>
     <h2>この日報を言及している日報</h2>
