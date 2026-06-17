@@ -6,6 +6,21 @@
 
 <%= render 'application/comments', commentable: @report %>
 
+<% mentioning_reports = @report.mentioning_reports.latest.includes(:user) %>
+<% if mentioning_reports.any? %>
+  <section>
+    <h2>この日報を言及している日報</h2>
+    <ul>
+      <% mentioning_reports.each do |report| %>
+        <li>
+          <%= link_to report.title, report %>
+          （<%= report.user.name %>）
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
 <nav class="page-nav">
   <% if @report.editable?(current_user) %>
     <%= link_to t('views.common.edit', name: Report.model_name.human.downcase), edit_report_path(@report) %> |
