@@ -34,19 +34,7 @@ class Report < ApplicationRecord
   REPORT_URL_PATTERN = %r{http://localhost:3000/reports/(\d+)}
 
   def sync_report_links
-    new_target_ids = content.scan(REPORT_URL_PATTERN).flatten.map(&:to_i).uniq
-    new_target_ids.delete(id)
-
-    current_target_ids = source_report_links.pluck(:target_report_id)
-
-    ids_to_add    = new_target_ids - current_target_ids
-    ids_to_remove = current_target_ids - new_target_ids
-
-    source_report_links.where(target_report_id: ids_to_remove).destroy_all
-    ids_to_add.each do |target_id|
-      next unless Report.exists?(target_id)
-
-      source_report_links.find_or_create_by!(target_report_id: target_id)
-    end
+    new_target_ids = content.scan(REPORT_URL_PATTERN).flatten
+    self.mentioned_reports = Report.where(id: new_target_ids).where.not(id: id)
   end
 end
